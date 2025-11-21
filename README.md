@@ -143,39 +143,6 @@ Selected seats persisted to localStorage with efficient serialization:
 - **Tablet**: Adaptive grid layout
 - **Mobile**: Full-screen map with bottom sheet for details
 
-## Data Structure
-
-The venue data is structured for efficient rendering and querying:
-
-```typescript
-interface VenueData {
-  venueId: string;
-  name: string;
-  map: { width: number; height: number };
-  sections: Section[];
-}
-
-interface Section {
-  id: string;
-  label: string;
-  transform: { x: number; y: number; scale: number };
-  rows: Row[];
-}
-
-interface Row {
-  index: number;
-  seats: Seat[];
-}
-
-interface Seat {
-  id: string;
-  col: number;
-  x: number;      // Absolute x position
-  y: number;      // Absolute y position
-  priceTier: number;
-  status: 'available' | 'reserved' | 'sold' | 'held';
-}
-```
 
 ## Generating Venue Data
 
